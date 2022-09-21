@@ -13,8 +13,12 @@ function product(nums) {
 
 /** longest: return the length of the longest word in an array of words. */
 
-function longest(words) {
-
+function longest(words, index=0, currentLongest=0) {
+  if (index === words.length) return currentLongest;
+  if (words[index].length > currentLongest) {
+    currentLongest = words[index].length;
+  }
+  return longest(words, index + 1, currentLongest);
 }
 
 /** everyOther: return a string with every other letter. */
