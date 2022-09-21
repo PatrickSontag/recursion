@@ -1,7 +1,14 @@
 /** product: calculate the product of an array of numbers. */
 
 function product(nums) {
-
+  let total;
+  if (nums[0]) {
+    total = nums.pop() * product(nums);
+  }
+  else {
+    return 1;
+  }
+  return total;
 }
 
 /** longest: return the length of the longest word in an array of words. */
